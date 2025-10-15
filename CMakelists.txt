@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.10.2) 
+
+# THIS HAS TO COME BEFORE THE PROJECT LINE
+#set(CMAKE_C_COMPILER "gcc")
+#set(CMAKE_CXX_COMPILER "g++")
+# THIS HAS TO COME BEFORE THE PROJECT LINE
+
+project(main)
+
+include_directories(include)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
+
+file(GLOB_RECURSE SOURCES "src/*.cpp")
+
+add_executable(${PROJECT_NAME} ${SOURCES}) 
+
+
+#en ./build usar "cmake .." para crear el makefile. Luego usar "cmake --build ." para compilar y crear .exe
+#en linux es "make" en windows "cmake --build ."
